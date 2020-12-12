@@ -9,8 +9,11 @@ public class PlayerController : MonoBehaviour
 
 	public float moveSpeed;
 	public float jumpPower;
-	private bool isJump;
+	public float jumpAirTime;
+	// private bool isJump;
+	private bool isHoldJump;
 	private bool onGround;
+	private float currentAirTime;
 
 	public LayerMask groundLayer;
 	// Start is called before the first frame update
@@ -18,14 +21,21 @@ public class PlayerController : MonoBehaviour
 	{
 		playerRigidBody = GetComponent<Rigidbody2D>();
 		playerCollider = GetComponent<Collider2D>();
-		isJump=false;
+		// isJump=false;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)){
-			isJump = true;
+		// if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)){
+		// 	isJump = true;
+		// }
+		if(Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)){
+			isHoldJump = true;
+		}
+		else if(Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0)){
+			isHoldJump = false;
+			currentAirTime = 0;
 		}
 		onGround = Physics2D.IsTouchingLayers(playerCollider, groundLayer);
 	}
@@ -33,17 +43,27 @@ public class PlayerController : MonoBehaviour
 	// Update on fixed tick for physic
 	void FixedUpdate()
 	{
-		if(isJump)
-		{
-			if(onGround)
-			{
+		// if(isJump){
+		// 	if(onGround){
+		// 		playerRigidBody.velocity = new Vector2(moveSpeed, jumpPower);
+		// 	}
+		// }
+		// else{
+		// 		playerRigidBody.velocity = new Vector2(moveSpeed, playerRigidBody.velocity.y);
+		// }
+		
+		if(onGround){
+			currentAirTime =jumpAirTime;
+		}
+		if(isHoldJump){
+			if(currentAirTime > 0){
 				playerRigidBody.velocity = new Vector2(moveSpeed, jumpPower);
+				currentAirTime -= Time.deltaTime;
 			}
 		}
-		else
-		{
+		else{
 			playerRigidBody.velocity = new Vector2(moveSpeed, playerRigidBody.velocity.y);
 		}
-		isJump = false;
+		// isJump = false;
 	}
 }
