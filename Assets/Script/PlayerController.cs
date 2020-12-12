@@ -16,12 +16,16 @@ public class PlayerController : MonoBehaviour
 	private float currentAirTime;
 
 	public LayerMask groundLayer;
+
+	private Animator player_animation;
+
 	// Start is called before the first frame update
 	void Start()
 	{
 		playerRigidBody = GetComponent<Rigidbody2D>();
 		playerCollider = GetComponent<Collider2D>();
 		// isJump=false;
+		player_animation = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -65,5 +69,8 @@ public class PlayerController : MonoBehaviour
 			playerRigidBody.velocity = new Vector2(moveSpeed, playerRigidBody.velocity.y);
 		}
 		// isJump = false;
+
+		player_animation.SetFloat("speed", playerRigidBody.velocity.x);
+		player_animation.SetBool("grounded", onGround);
 	}
 }
