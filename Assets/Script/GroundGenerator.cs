@@ -13,19 +13,19 @@ public class GroundGenerator : MonoBehaviour
     public float distancegroundmin;
     public float distancegroundmax;
 
-    public GameObject[] grounds;
+    //public GameObject[] grounds;
     private int groundselector;
     private float[] groundslength;
 
-    //public ObjectPooler theObjectPool;
+    public ObjectPooler[] theObjectPools;
 
     void Start()
     {
         //groundlength = ground.GetComponent<BoxCollider2D>().size.x;
-        groundslength = new float[grounds.Length];
+        groundslength = new float[theObjectPools.Length];
 
-        for(int i=0; i<grounds.Length; i++){
-            groundslength[i] = grounds[i].GetComponent<BoxCollider2D>().size.x;
+        for(int i=0; i<theObjectPools.Length; i++){
+            groundslength[i] = theObjectPools[i].pooledObject.GetComponent<BoxCollider2D>().size.x;
         }
     }
 
@@ -36,17 +36,19 @@ public class GroundGenerator : MonoBehaviour
         {
             distanceground = Random.Range(distancegroundmin, distancegroundmax); //random jarak ground
             
-            groundselector = Random.Range(0, grounds.Length);
+            groundselector = Random.Range(0, theObjectPools.Length);
 
-            transform.position = new Vector3(transform.position.x + groundslength[groundselector] + distanceground, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + (groundslength[groundselector]/2) + distanceground, transform.position.y, transform.position.z);
 
             //Instantiate (ground, transform.position, transform.rotation);
-            Instantiate (grounds[groundselector], transform.position, transform.rotation);
-            //GameObject newPlatform = theObjectPool.GetPooledObject();
+            //Instantiate (grounds[groundselector], transform.position, transform.rotation);
+            GameObject newPlatform = theObjectPools[groundselector].GetPooledObject();
 
-            //newPlatform.transform.position = transform.position;
-            //newPlatform.transform.rotation = transform.rotation;
-            //newPlatform.SetActive(true);
+            newPlatform.transform.position = transform.position;
+            newPlatform.transform.rotation = transform.rotation;
+            newPlatform.SetActive(true);
+
+            transform.position = new Vector3(transform.position.x + (groundslength[groundselector]/2), transform.position.y, transform.position.z);
 
         }
     }
