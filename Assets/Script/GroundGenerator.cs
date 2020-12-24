@@ -13,7 +13,7 @@ public class GroundGenerator : MonoBehaviour
     public float distancegroundmin;
     public float distancegroundmax;
 
-    //public ObjectPooler theObjectPool;
+    public ObjectPooler theObjectPool;
 
     void Start()
     {
@@ -28,12 +28,12 @@ public class GroundGenerator : MonoBehaviour
             distanceground = Random.Range(distancegroundmin, distancegroundmax); //random jarak ground
             transform.position = new Vector3(transform.position.x + groundlength + distanceground, transform.position.y, transform.position.z);
 
-            Instantiate (ground, transform.position, transform.rotation);
-            //GameObject newPlatform = theObjectPool.GetPooledObject();
+            //Instantiate (ground, transform.position, transform.rotation);
+            GameObject newPlatform = theObjectPool.GetPooledObject();
 
-            //newPlatform.transform.position = transform.position;
-            //newPlatform.transform.rotation = transform.rotation;
-            //newPlatform.SetActive(true);
+            newPlatform.transform.position = transform.position;
+            newPlatform.transform.rotation = transform.rotation;
+            newPlatform.SetActive(true);
 
         }
     }

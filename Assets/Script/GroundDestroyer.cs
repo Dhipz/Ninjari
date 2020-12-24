@@ -17,8 +17,8 @@ public class GroundDestroyer : MonoBehaviour
     {
         if(transform.position.x < batasgrounddestroy.transform.position.x)
         {
-            Destroy(gameObject);
-            //gameObject.SetActive(false);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
