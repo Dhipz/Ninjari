@@ -234,10 +234,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground: {fileID: 629311010352590571, guid: 8bf3feaea7450764b971620024b76a92, type: 3}
   pointbatas: {fileID: 814694214}
-  distanceground: 5e+15
-  distancegroundmin: 0
-  distancegroundmax: 7
-  theObjectPool: {fileID: 477785689}
+  distanceground: 5e+10
+  distancegroundmin: 2
+  distancegroundmax: 3
+  grounds:
+  - {fileID: 8914106051637203561, guid: 0cbf0453c9ed4534998701f9e5b88c81, type: 3}
+  - {fileID: 4438757559172022224, guid: ffd244f113330c542b58bd2203734636, type: 3}
+  - {fileID: 629311010352590571, guid: 8bf3feaea7450764b971620024b76a92, type: 3}
+  - {fileID: 4896992774419174527, guid: 31febf70b6c0fbc4389113a9f9691152, type: 3}
 --- !u!4 &52474616
 Transform:
   m_ObjectHideFlags: 0
@@ -862,7 +866,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8722491, y: -0.129, z: -10}
+  m_LocalPosition: {x: 2.2385712, y: -0.129, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 317222266}
@@ -2011,7 +2015,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097719296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.86, y: -0.129, z: 0}
+  m_LocalPosition: {x: -9.2, y: -0.129, z: 0}
   m_LocalScale: {x: 0.5513677, y: 0.5513677, z: 0.5513677}
   m_Children: []
   m_Father: {fileID: 0}
