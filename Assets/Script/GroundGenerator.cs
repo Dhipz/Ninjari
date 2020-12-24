@@ -25,7 +25,7 @@ public class GroundGenerator : MonoBehaviour
     {
         if(transform.position.x < pointbatas.position.x)
         {
-            //distanceground = Random.Range(distancegroundmin, distancegroundmax);
+            distanceground = Random.Range(distancegroundmin, distancegroundmax); //random jarak ground
             transform.position = new Vector3(transform.position.x + groundlength + distanceground, transform.position.y, transform.position.z);
 
             Instantiate (ground, transform.position, transform.rotation);
