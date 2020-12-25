@@ -235,7 +235,7 @@ MonoBehaviour:
   ground: {fileID: 629311010352590571, guid: 8bf3feaea7450764b971620024b76a92, type: 3}
   pointbatas: {fileID: 814694214}
   distanceground: 5e+13
-  distancegroundmin: 1
+  distancegroundmin: 2
   distancegroundmax: 4
   theObjectPools:
   - {fileID: 477785689}
@@ -252,7 +252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52474614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.997, y: -5.5, z: -10.193396}
+  m_LocalPosition: {x: 5.997, y: 0.28, z: -10.193396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1435212589}
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd17b2788d77a1f4aa8a27256baabff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 4004297865443220042, guid: 62c5196d0025ed4499210d873be83fc5,
+  pooledObject: {fileID: 4669695507410790525, guid: d8c1c624285e48643b666ebdfa216418,
     type: 3}
   pooledAmount: 5
 --- !u!1 &197692145
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 197692146}
   - component: {fileID: 197692147}
   m_Layer: 0
-  m_Name: Catcher
+  m_Name: DeathBox
   m_TagString: killbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -793,7 +793,6 @@ GameObject:
   m_Component:
   - component: {fileID: 443422996}
   - component: {fileID: 443422998}
-  - component: {fileID: 443422997}
   m_Layer: 9
   m_Name: Ground 7x1 (2)
   m_TagString: Untagged
@@ -822,19 +821,6 @@ Transform:
   m_Father: {fileID: 200619249}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &443422997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443422995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82585f97ed28cdf49935ea907ae52807, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  batasgrounddestroy: {fileID: 0}
 --- !u!61 &443422998
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1018,7 +1004,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4590816, y: 1.155, z: -10}
+  m_LocalPosition: {x: -2.4616032, y: 1.155, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 317222266}
@@ -1718,7 +1704,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1421135971}
   - component: {fileID: 1421135972}
-  - component: {fileID: 1421135973}
   m_Layer: 9
   m_Name: Ground 7x1 (1)
   m_TagString: Untagged
@@ -1773,19 +1758,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.987085, y: 0.9921608}
   m_EdgeRadius: 0
---- !u!114 &1421135973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1421135970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82585f97ed28cdf49935ea907ae52807, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  batasgrounddestroy: {fileID: 0}
 --- !u!1 &1435212588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,7 +1782,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435212588}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 15.5, z: -17.65815}
+  m_LocalPosition: {x: -0.01, y: 7, z: -17.65815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 52474616}
@@ -2375,8 +2347,8 @@ MonoBehaviour:
   moveSpeed: 6
   speedMultiplier: 1.02
   speedIncreaseLimit: 50
-  jumpPower: 10
-  jumpAirTime: 0.1
+  jumpPower: 5
+  jumpAirTime: 0.05
   groundLayer:
     serializedVersion: 2
     m_Bits: 512

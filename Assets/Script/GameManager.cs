@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     }
      public IEnumerator RestartGameCo(){
         player.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         groundList = FindObjectsOfType<GroundDestroyer>();
         for(int i=0; i<groundList.Length; i++){
             groundList[i].gameObject.SetActive(false);
