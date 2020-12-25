@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground: {fileID: 629311010352590571, guid: 8bf3feaea7450764b971620024b76a92, type: 3}
   pointbatas: {fileID: 814694214}
-  distanceground: 5e+10
+  distanceground: 5e+13
   distancegroundmin: 1
   distancegroundmax: 5
   theObjectPools:
@@ -242,6 +242,8 @@ MonoBehaviour:
   - {fileID: 145987640}
   - {fileID: 383635834}
   - {fileID: 851854970}
+  heightgroundmaxpoint: {fileID: 1435212589}
+  maxheightchange: 5
 --- !u!4 &52474616
 Transform:
   m_ObjectHideFlags: 0
@@ -252,7 +254,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.997, y: 0.29, z: -10.193396}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1435212589}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -493,9 +496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd17b2788d77a1f4aa8a27256baabff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 4438757559172022224, guid: ffd244f113330c542b58bd2203734636,
+  pooledObject: {fileID: 4669695507410790525, guid: d8c1c624285e48643b666ebdfa216418,
     type: 3}
-  pooledAmount: 8
+  pooledAmount: 5
 --- !u!1 &200619248
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,9 +723,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd17b2788d77a1f4aa8a27256baabff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 629311010352590571, guid: 8bf3feaea7450764b971620024b76a92,
+  pooledObject: {fileID: 4438757559172022224, guid: ffd244f113330c542b58bd2203734636,
     type: 3}
-  pooledAmount: 8
+  pooledAmount: 5
 --- !u!1 &443422995
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 8914106051637203561, guid: 0cbf0453c9ed4534998701f9e5b88c81,
     type: 3}
-  pooledAmount: 8
+  pooledAmount: 5
 --- !u!4 &477785690
 Transform:
   m_ObjectHideFlags: 0
@@ -958,7 +961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2385712, y: -0.129, z: -10}
+  m_LocalPosition: {x: -4.5080004, y: -0.129, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 317222266}
@@ -1487,9 +1490,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd17b2788d77a1f4aa8a27256baabff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 4896992774419174527, guid: 31febf70b6c0fbc4389113a9f9691152,
+  pooledObject: {fileID: 629311010352590571, guid: 8bf3feaea7450764b971620024b76a92,
     type: 3}
-  pooledAmount: 8
+  pooledAmount: 5
 --- !u!1 &1217112805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,6 +1653,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   batasgrounddestroy: {fileID: 0}
+--- !u!1 &1435212588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435212589}
+  m_Layer: 0
+  m_Name: BatasMaxHeight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1435212589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435212588}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.01, y: 2.04, z: -17.65815}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 52474616}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1569665248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,8 +2239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  jumpPower: 4
-  jumpAirTime: 0.01
+  jumpPower: 5
+  jumpAirTime: 0.1
   groundLayer:
     serializedVersion: 2
     m_Bits: 512

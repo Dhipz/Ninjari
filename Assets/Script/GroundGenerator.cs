@@ -19,6 +19,12 @@ public class GroundGenerator : MonoBehaviour
 
     public ObjectPooler[] theObjectPools;
 
+    private float heightgroundmin;
+    public Transform heightgroundmaxpoint;
+    private float heightgroundmax;
+    public float maxheightchange;
+    private float heightchange;
+
     void Start()
     {
         //groundlength = ground.GetComponent<BoxCollider2D>().size.x;
@@ -27,10 +33,13 @@ public class GroundGenerator : MonoBehaviour
         for(int i=0; i<theObjectPools.Length; i++){
             groundslength[i] = theObjectPools[i].pooledObject.GetComponent<BoxCollider2D>().size.x;
         }
+
+        heightgroundmin = transform.position.y;
+        heightgroundmax = heightgroundmaxpoint.position.y;
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()   
     {
         if(transform.position.x < pointbatas.position.x)
         {
@@ -38,7 +47,18 @@ public class GroundGenerator : MonoBehaviour
             
             groundselector = Random.Range(0, theObjectPools.Length);
 
-            transform.position = new Vector3(transform.position.x + (groundslength[groundselector]/2) + distanceground, transform.position.y, transform.position.z);
+            heightchange = transform.position.y + Random.Range(maxheightchange, -maxheightchange); //random height ground
+
+            if(heightchange > heightgroundmax){
+                heightchange = heightgroundmax;
+            }
+            else if(heightchange < heightgroundmin){
+                heightchange = heightgroundmin;
+            }
+            
+            transform.position = new Vector3(transform.position.x + (groundslength[groundselector]/2) + distanceground, heightchange, transform.position.z);
+
+            
 
             //Instantiate (ground, transform.position, transform.rotation);
             //Instantiate (grounds[groundselector], transform.position, transform.rotation);
