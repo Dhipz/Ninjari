@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
     private Vector3 playerStartPoint;
 
     private GroundDestroyer[] groundList;
+    private ScoreManager SM;
     // Start is called before the first frame update
     void Start()
     {
         groundStartPoint = groundGenerator.position;
         playerStartPoint = player.transform.position;
+        SM = FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine("RestartGameCo");
     }
      public IEnumerator RestartGameCo(){
+        SM.scoreIncrease = false;
         player.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.8f);
         groundList = FindObjectsOfType<GroundDestroyer>();
@@ -37,5 +40,7 @@ public class GameManager : MonoBehaviour
         player.transform.position = playerStartPoint;
         groundGenerator.position = groundStartPoint;
         player.gameObject.SetActive(true);
+        SM.scoreCounter = 0;
+        SM.scoreIncrease = true;
     }
 }
