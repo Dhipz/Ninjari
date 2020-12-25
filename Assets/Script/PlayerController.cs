@@ -8,9 +8,12 @@ public class PlayerController : MonoBehaviour
 	//private Collider2D playerCollider;
 
 	public float moveSpeed;
+	private float moveSpeedStore;
 	public float speedMultiplier;
 	public float speedIncreaseLimit;
+	private float speedIncreaseLimitStore;
 	private float speedCounter;
+	private float speedCounterStore;
 
 	public float jumpPower;
 	public float jumpAirTime;
@@ -25,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
 	private Animator player_animation;
 
+	public GameManager GM;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -33,6 +38,9 @@ public class PlayerController : MonoBehaviour
 		// isJump=false;
 		player_animation = GetComponent<Animator>();
 		speedCounter = speedIncreaseLimit;
+		moveSpeedStore = moveSpeed;
+		speedCounterStore = speedCounter;
+		speedIncreaseLimitStore = speedIncreaseLimit;
 	}
 
 	// Update is called once per frame
@@ -87,5 +95,14 @@ public class PlayerController : MonoBehaviour
 
 		player_animation.SetFloat("speed", playerRigidBody.velocity.x);
 		player_animation.SetBool("grounded", onGround);
+	}
+
+	void OnCollisionEnter2D(Collision2D other){
+		if(other.gameObject.tag == "killbox"){
+			GM.RestartGame();
+			moveSpeed = moveSpeedStore;
+			speedCounter = speedCounterStore;
+			speedIncreaseLimit = speedIncreaseLimitStore;
+		}
 	}
 }
