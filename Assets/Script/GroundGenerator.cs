@@ -24,7 +24,10 @@ public class GroundGenerator : MonoBehaviour
     private float heightgroundmax;
     public float maxheightchange;
     private float heightchange;
-
+    
+    private CoinGenerator CG;
+    public float randomCoinLimit;
+    
     void Start()
     {
         //groundlength = ground.GetComponent<BoxCollider2D>().size.x;
@@ -36,6 +39,8 @@ public class GroundGenerator : MonoBehaviour
 
         heightgroundmin = transform.position.y;
         heightgroundmax = heightgroundmaxpoint.position.y;
+
+        CG = FindObjectOfType<CoinGenerator>();
     }
 
     // Update is called once per frame
@@ -67,7 +72,10 @@ public class GroundGenerator : MonoBehaviour
             newPlatform.transform.position = transform.position;
             newPlatform.transform.rotation = transform.rotation;
             newPlatform.SetActive(true);
-
+            if(Random.Range(0f, 100f) < randomCoinLimit){
+                CG.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z)); //spawn coin in the ground
+            }
+            
             transform.position = new Vector3(transform.position.x + (groundslength[groundselector]/2), transform.position.y, transform.position.z);
 
         }
