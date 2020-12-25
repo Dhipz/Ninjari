@@ -5,9 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 	private Rigidbody2D playerRigidBody;
-	private Collider2D playerCollider;
+	//private Collider2D playerCollider;
 
 	public float moveSpeed;
+	public float speedMultiplier;
+	public float speedIncreaseLimit;
+	private float speedCounter;
+
 	public float jumpPower;
 	public float jumpAirTime;
 	// private bool isJump;
@@ -16,6 +20,8 @@ public class PlayerController : MonoBehaviour
 	private float currentAirTime;
 
 	public LayerMask groundLayer;
+	public Transform groundCheck;
+	public float groundCheckRadius;
 
 	private Animator player_animation;
 
@@ -23,9 +29,10 @@ public class PlayerController : MonoBehaviour
 	void Start()
 	{
 		playerRigidBody = GetComponent<Rigidbody2D>();
-		playerCollider = GetComponent<Collider2D>();
+		//playerCollider = GetComponent<Collider2D>();
 		// isJump=false;
 		player_animation = GetComponent<Animator>();
+		speedCounter = speedIncreaseLimit;
 	}
 
 	// Update is called once per frame
@@ -41,7 +48,14 @@ public class PlayerController : MonoBehaviour
 			isHoldJump = false;
 			currentAirTime = 0;
 		}
-		onGround = Physics2D.IsTouchingLayers(playerCollider, groundLayer);
+		//onGround = Physics2D.IsTouchingLayers(playerCollider, groundLayer);
+		onGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+		if(transform.position.x > speedCounter){
+			speedCounter += speedIncreaseLimit;
+			speedIncreaseLimit = speedIncreaseLimit*speedMultiplier;
+			moveSpeed = moveSpeed*speedMultiplier;
+		}
 	}
 
 	// Update on fixed tick for physic
@@ -57,7 +71,7 @@ public class PlayerController : MonoBehaviour
 		// }
 		
 		if(onGround){
-			currentAirTime =jumpAirTime;
+			currentAirTime =jumpAirTime; 
 		}
 		if(isHoldJump){
 			if(currentAirTime > 0){
@@ -66,6 +80,7 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 		else{
+
 			playerRigidBody.velocity = new Vector2(moveSpeed, playerRigidBody.velocity.y);
 		}
 		// isJump = false;

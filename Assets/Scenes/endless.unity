@@ -1493,6 +1493,36 @@ MonoBehaviour:
   pooledObject: {fileID: 629311010352590571, guid: 8bf3feaea7450764b971620024b76a92,
     type: 3}
   pooledAmount: 5
+--- !u!1 &966714233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 966714234}
+  m_Layer: 0
+  m_Name: GroundCek
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &966714234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966714233}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 0.04, z: -80.53837}
+  m_LocalScale: {x: 1.8136718, y: 1.8136718, z: 1.8136718}
+  m_Children: []
+  m_Father: {fileID: 2097719300}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1217112805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,7 +2252,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.2, y: -0.129, z: 0}
   m_LocalScale: {x: 0.5513677, y: 0.5513677, z: 0.5513677}
-  m_Children: []
+  m_Children:
+  - {fileID: 966714234}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2239,11 +2270,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
+  speedMultiplier: 1.02
+  speedIncreaseLimit: 50
   jumpPower: 5
   jumpAirTime: 0.1
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
+  groundCheck: {fileID: 966714234}
+  groundCheckRadius: 0.1
 --- !u!95 &2097719302
 Animator:
   serializedVersion: 3
