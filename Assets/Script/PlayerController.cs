@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
 	private bool onGround;
 	private float currentAirTime;
 
+	//private bool stopJump;
+	//private bool doubleJump;
+
 	public LayerMask groundLayer;
 	public Transform groundCheck;
 	public float groundCheckRadius;
