@@ -1404,6 +1404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3185266450578990911}
   - component: {fileID: 1696649338998525514}
+  - component: {fileID: 8771663799003371029}
   m_Layer: 9
   m_Name: Ground 10U
   m_TagString: Untagged
@@ -1521,6 +1522,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 7}
   m_EdgeRadius: 0
+--- !u!114 &8771663799003371029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994530409007197804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82585f97ed28cdf49935ea907ae52807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batasgrounddestroy: {fileID: 0}
 --- !u!1 &3084589014220442416
 GameObject:
   m_ObjectHideFlags: 0
