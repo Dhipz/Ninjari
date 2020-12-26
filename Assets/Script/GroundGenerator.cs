@@ -27,6 +27,9 @@ public class GroundGenerator : MonoBehaviour
     
     private CoinGenerator CG;
     public float randomCoinLimit;
+
+    public float randomSpikeLimit;
+    public ObjectPooler spikePool;
     
     void Start()
     {
@@ -74,6 +77,15 @@ public class GroundGenerator : MonoBehaviour
             newPlatform.SetActive(true);
             if(Random.Range(0f, 100f) < randomCoinLimit){
                 CG.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 1f, 0)); //spawn coin in the ground
+            }
+
+            if(Random.Range(0f, 100f) < randomSpikeLimit){
+                GameObject newSpike = spikePool.GetPooledObject();
+                float spikeXPosition = Random.Range(-groundslength[groundselector]/2 + 1f, groundslength[groundselector]/2);
+                Vector3 spikePosition = new Vector3(spikeXPosition, 0.5f, 0f);
+                newSpike.transform.position = transform.position + spikePosition;
+                newSpike.transform.rotation = transform.rotation;
+                newSpike.SetActive(true);
             }
             
             transform.position = new Vector3(transform.position.x + (groundslength[groundselector]/2), transform.position.y, 0);

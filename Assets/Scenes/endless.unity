@@ -443,6 +443,8 @@ MonoBehaviour:
   heightgroundmaxpoint: {fileID: 1435212589}
   maxheightchange: 3.5
   randomCoinLimit: 100
+  randomSpikeLimit: 0
+  spikePool: {fileID: 1961908906}
 --- !u!4 &52474616
 Transform:
   m_ObjectHideFlags: 0
@@ -1002,7 +1004,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197692145}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.4590816, y: -6.9, z: 10}
+  m_LocalPosition: {x: 4.4590816, y: -5.59, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -3823,6 +3825,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864209416}
   m_CullTransparentMesh: 0
+--- !u!1 &1961908905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1961908907}
+  - component: {fileID: 1961908906}
+  m_Layer: 0
+  m_Name: SpikePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1961908906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961908905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd17b2788d77a1f4aa8a27256baabff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 4245824969520293956, guid: 98c147f3b764dab4b8685ea8c33e595a,
+    type: 3}
+  pooledAmount: 1
+--- !u!4 &1961908907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961908905}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.2078495, y: 1.7066809, z: -0.26506937}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1991631553
 GameObject:
   m_ObjectHideFlags: 0
