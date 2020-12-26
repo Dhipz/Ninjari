@@ -442,7 +442,7 @@ MonoBehaviour:
   - {fileID: 851854970}
   heightgroundmaxpoint: {fileID: 1435212589}
   maxheightchange: 3.5
-  randomCoinLimit: 100
+  randomCoinLimit: 50
   randomSpikeLimit: 0
   spikePool: {fileID: 1961908906}
 --- !u!4 &52474616
@@ -499,7 +499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61620685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 1.03, z: -10.1934}
+  m_LocalPosition: {x: 5.997, y: 0.28, z: -10.1934}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2108952364}
@@ -976,7 +976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd17b2788d77a1f4aa8a27256baabff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 4669695507410790525, guid: d8c1c624285e48643b666ebdfa216418,
+  pooledObject: {fileID: 8596186050737457233, guid: 8a759e9e5cb835346a924f12abb9b13c,
     type: 3}
   pooledAmount: 5
 --- !u!1 &197692145
@@ -1338,7 +1338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd17b2788d77a1f4aa8a27256baabff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 4438757559172022224, guid: ffd244f113330c542b58bd2203734636,
+  pooledObject: {fileID: 629311010352590571, guid: 8bf3feaea7450764b971620024b76a92,
     type: 3}
   pooledAmount: 5
 --- !u!1 &443422995
@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd17b2788d77a1f4aa8a27256baabff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 8914106051637203561, guid: 0cbf0453c9ed4534998701f9e5b88c81,
+  pooledObject: {fileID: 4669695507410790525, guid: d8c1c624285e48643b666ebdfa216418,
     type: 3}
   pooledAmount: 5
 --- !u!4 &477785690
@@ -1562,7 +1562,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.88902, y: 2.1109998, z: -10}
+  m_LocalPosition: {x: -2.9011726, y: 2.1109998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 317222266}
@@ -2166,7 +2166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd17b2788d77a1f4aa8a27256baabff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 629311010352590571, guid: 8bf3feaea7450764b971620024b76a92,
+  pooledObject: {fileID: 4896992774419174527, guid: 31febf70b6c0fbc4389113a9f9691152,
     type: 3}
   pooledAmount: 5
 --- !u!1 &903498629
@@ -4475,11 +4475,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b56f7cb47d8324285423ed13761c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 7
   speedMultiplier: 1.02
   speedIncreaseLimit: 50
-  jumpPower: 6
-  jumpAirTime: 0.001
+  jumpPower: 7
+  jumpAirTime: 0.000001
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -4536,7 +4536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 4658681299516000473, guid: d8d604d6ca04a324a9163f99832be715,
     type: 3}
-  pooledAmount: 5
+  pooledAmount: 3
 --- !u!4 &2108952364
 Transform:
   m_ObjectHideFlags: 0
@@ -4545,7 +4545,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108952362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -12.3, y: -1.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 61620687}
