@@ -76,7 +76,7 @@ public class GroundGenerator : MonoBehaviour
             newPlatform.transform.rotation = transform.rotation;
             newPlatform.SetActive(true);
             if(Random.Range(0f, 100f) < randomCoinLimit){
-                CG.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 1f, 0)); //spawn coin in the ground
+                CG.SpawnCoins(new Vector3(transform.position.x - 1.5f, transform.position.y, transform.position.z)); //spawn coin in the ground
             }
 
             if(Random.Range(0f, 100f) < randomSpikeLimit){
