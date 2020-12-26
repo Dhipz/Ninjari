@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     private GroundDestroyer[] groundList;
     private ScoreManager SM;
+
+    public DeathMenu deathScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +29,24 @@ public class GameManager : MonoBehaviour
     }
 
     public void RestartGame(){
-        StartCoroutine("RestartGameCo");
+        //StartCoroutine("RestartGameCo");
+        SM.scoreIncrease = false;
+        player.gameObject.SetActive(false);
+        deathScreen.gameObject.SetActive(true);
     }
-     public IEnumerator RestartGameCo(){
+    public void Reset(){
+        deathScreen.gameObject.SetActive(false);
+        groundList = FindObjectsOfType<GroundDestroyer>();
+        for(int i=0; i<groundList.Length; i++){
+            groundList[i].gameObject.SetActive(false);
+        }
+        player.transform.position = playerStartPoint;
+        groundGenerator.position = groundStartPoint;
+        player.gameObject.SetActive(true);
+        SM.scoreCounter = 0;
+        SM.scoreIncrease = true;
+    }
+    /* public IEnumerator RestartGameCo(){
         SM.scoreIncrease = false;
         player.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.8f);
@@ -42,5 +59,5 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(true);
         SM.scoreCounter = 0;
         SM.scoreIncrease = true;
-    }
+    }*/
 }
