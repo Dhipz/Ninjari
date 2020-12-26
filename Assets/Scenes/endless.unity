@@ -964,7 +964,7 @@ MonoBehaviour:
   m_Follow: {fileID: 2097719300}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 6
+    OrthographicSize: 5
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -1220,7 +1220,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1244,7 +1244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9794374, y: 1.155, z: -10}
+  m_LocalPosition: {x: -4.767759, y: 2.1109998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 317222266}
@@ -1696,17 +1696,17 @@ MonoBehaviour:
   m_XDamping: 1
   m_YDamping: 8
   m_ZDamping: 1
-  m_ScreenX: 0.33
-  m_ScreenY: 0.607
+  m_ScreenX: 0.291
+  m_ScreenY: 0.724
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
+  m_DeadZoneHeight: 0.37
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
+  m_SoftZoneHeight: 1
   m_BiasX: 0
-  m_BiasY: 0.14799997
+  m_BiasY: 0
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
   m_AdjustmentMode: 2
@@ -2766,7 +2766,7 @@ MonoBehaviour:
   moveSpeed: 6
   speedMultiplier: 1.02
   speedIncreaseLimit: 50
-  jumpPower: 8
+  jumpPower: 6
   jumpAirTime: 0.001
   groundLayer:
     serializedVersion: 2
@@ -2822,9 +2822,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd17b2788d77a1f4aa8a27256baabff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 5183641238703276498, guid: 810c5fa57a7eb0e469274b214b74a2bc,
+  pooledObject: {fileID: 4658681299516000473, guid: d8d604d6ca04a324a9163f99832be715,
     type: 3}
-  pooledAmount: 1
+  pooledAmount: 5
 --- !u!4 &2108952364
 Transform:
   m_ObjectHideFlags: 0
