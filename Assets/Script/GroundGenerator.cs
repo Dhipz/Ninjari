@@ -66,8 +66,6 @@ public class GroundGenerator : MonoBehaviour
             
             transform.position = new Vector3(transform.position.x + (groundslength[groundselector]/2) + distanceground, heightchange,  transform.position.z); //
 
-            
-
             //Instantiate (ground, transform.position, transform.rotation);
             //Instantiate (grounds[groundselector], transform.position, transform.rotation);
             GameObject newPlatform = theObjectPools[groundselector].GetPooledObject();
