@@ -7,9 +7,9 @@ public class DeathMenu : MonoBehaviour
 {
     public string mainMenu;
     public GameObject pauseButton;
-    void OnEnable(){
+    /*void OnEnable(){
     	pauseButton.SetActive(false);
-    }
+    }*/
     public void RestartGame(){
         FindObjectOfType<GameManager>().Reset();
         pauseButton.SetActive(true);
