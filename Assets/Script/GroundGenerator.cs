@@ -64,7 +64,7 @@ public class GroundGenerator : MonoBehaviour
                 heightchange = heightgroundmin;
             }
             
-            transform.position = new Vector3(transform.position.x + (groundslength[groundselector]/2) + distanceground, heightchange, 0);
+            transform.position = new Vector3(transform.position.x + (groundslength[groundselector]/2) + distanceground, heightchange,  transform.position.z); //
 
             
 
@@ -76,7 +76,7 @@ public class GroundGenerator : MonoBehaviour
             newPlatform.transform.rotation = transform.rotation;
             newPlatform.SetActive(true);
             if(Random.Range(0f, 100f) < randomCoinLimit){
-                CG.SpawnCoins(new Vector3(transform.position.x - 1.5f, transform.position.y, transform.position.z)); //spawn coin in the ground
+                CG.SpawnCoins(new Vector3(transform.position.x, transform.position.y, transform.position.z)); //spawn coin in the ground
             }
 
             if(Random.Range(0f, 100f) < randomSpikeLimit){
@@ -88,7 +88,7 @@ public class GroundGenerator : MonoBehaviour
                 newSpike.SetActive(true);
             }
             
-            transform.position = new Vector3(transform.position.x + (groundslength[groundselector]/2), transform.position.y, 0);
+            transform.position = new Vector3(transform.position.x + (groundslength[groundselector]/2), transform.position.y,  transform.position.z);
 
         }
     }
