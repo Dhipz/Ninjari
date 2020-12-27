@@ -311,7 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: mainmenu
   pauseMenu: {fileID: 111996400}
-  pauseButton: {fileID: 0}
+  pauseButton: {fileID: 43901868}
 --- !u!114 &43901871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4481,7 +4481,7 @@ MonoBehaviour:
   speedMultiplier: 1.02
   speedIncreaseLimit: 50
   jumpPower: 6
-  jumpAirTime: 1
+  jumpAirTime: 0.00000001
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
