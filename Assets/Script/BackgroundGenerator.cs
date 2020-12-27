@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class BackgroundGenerator : MonoBehaviour
 {
-    public GameObject[] levels;
+    public GameObject[] backgroundList;
     private Camera mainCamera;
     private Vector2 screenBounds;
     public float choke;
-    //public float scrollSpeed;
+    public float scrollSpeed;
 
     void Start(){
         mainCamera = gameObject.GetComponent<Camera>();
         screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z));
-        foreach(GameObject obj in levels){
+        foreach(GameObject obj in backgroundList){
             loadChildObjects(obj);
         }
     }
@@ -47,16 +47,16 @@ public class BackgroundGenerator : MonoBehaviour
             }
         }
     }
-/*
+
     void Update() {
         Vector3 velocity = Vector3.zero;
         Vector3 desiredPosition = transform.position + new Vector3(scrollSpeed, 0, 0);
         Vector3 smoothPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, 0.3f);
         transform.position = smoothPosition;
     }
-*/
+
     void LateUpdate(){
-        foreach(GameObject obj in levels){
+        foreach(GameObject obj in backgroundList){
             repositionChildObjects(obj);
         }
     }
