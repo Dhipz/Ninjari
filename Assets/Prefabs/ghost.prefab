@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2313283486025302782}
   - component: {fileID: 946797638145037323}
   - component: {fileID: -2987360661821485426}
+  - component: {fileID: 1290734944468711843}
   m_Layer: 0
   m_Name: ghost
   m_TagString: killbox
@@ -100,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.5555556, y: 0.8111111}
+    oldSize: {x: 0.625, y: 0.9125}
     newSize: {x: 0.33333334, y: 0.48666668}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -109,3 +110,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5555556, y: 0.8111111}
   m_EdgeRadius: 0
+--- !u!114 &1290734944468711843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6434138316395536295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82585f97ed28cdf49935ea907ae52807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batasgrounddestroy: {fileID: 0}
