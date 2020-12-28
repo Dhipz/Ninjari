@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
 	public AudioSource jumpSound;
 	public AudioSource deathSound;
+	public AudioSource playSound;
 
 	// Start is called before the first frame update
 	void Start()
@@ -113,5 +114,8 @@ public class PlayerController : MonoBehaviour
 			deathSound.Play();
 			player_animation.SetBool("death", other.gameObject.tag == "killbox");
 		}
+		/*else{
+			playSound.Play();
+		}*/
 	}
 }
