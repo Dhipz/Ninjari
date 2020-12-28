@@ -7,10 +7,13 @@ public class PickupCoin : MonoBehaviour
     public int scoreGive;
     private ScoreManager ScoreManager;
 
+    private AudioSource coinSound;
+
     // Start is called before the first frame update
     void Start()
     {
         ScoreManager = FindObjectOfType<ScoreManager>();
+        coinSound = GameObject.Find("coinsfx").GetComponent<AudioSource>();
 
     }
 
@@ -23,6 +26,15 @@ public class PickupCoin : MonoBehaviour
         if(other.gameObject.name == "Player"){
             ScoreManager.AddScore(scoreGive); //add coin to score
             gameObject.SetActive(false);
+
+            if(coinSound.isPlaying){
+                coinSound.Stop();
+                coinSound.Play();
+            }
+            else{
+                coinSound.Play();
+            }
+            
         }
     }
 }

@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
 
 	public GameManager GM;
 
+	public AudioSource jumpSound;
+	public AudioSource deathSound;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -54,6 +57,7 @@ public class PlayerController : MonoBehaviour
 		// }
 		if(Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)){
 			isHoldJump = true;
+			jumpSound.Play();
 		}
 		else if(Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0)){
 			isHoldJump = false;
@@ -106,6 +110,7 @@ public class PlayerController : MonoBehaviour
 			moveSpeed = moveSpeedStore;
 			speedCounter = speedCounterStore;
 			speedIncreaseLimit = speedIncreaseLimitStore;
+			deathSound.Play();
 		}
 	}
 }
