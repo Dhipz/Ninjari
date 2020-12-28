@@ -31,8 +31,8 @@ public class ScoreManager : MonoBehaviour
             highScoreCounter = scoreCounter;
             PlayerPrefs.SetFloat("HighScore", highScoreCounter);
         }
-        scoreText.text = "Score: " + Mathf.Round(scoreCounter);
-        highScoreText.text = "High Score: " + Mathf.Round(highScoreCounter);
+        scoreText.text = " " + Mathf.Round(scoreCounter);
+        highScoreText.text = " " + Mathf.Round(highScoreCounter);
     }
 
     public void AddScore(int pointAdd){
