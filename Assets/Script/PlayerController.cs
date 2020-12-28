@@ -111,6 +111,7 @@ public class PlayerController : MonoBehaviour
 			speedCounter = speedCounterStore;
 			speedIncreaseLimit = speedIncreaseLimitStore;
 			deathSound.Play();
+			player_animation.SetBool("death", other.gameObject.tag == "killbox");
 		}
 	}
 }
