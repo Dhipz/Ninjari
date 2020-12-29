@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
 	private bool onGround;
 	private float currentAirTime;
 
-	//private bool stopJump;
-	//private bool doubleJump;
+	private bool stopJump;
+	private bool doubleJump;
 
 	public LayerMask groundLayer;
 	public Transform groundCheck;
@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
 		moveSpeedStore = moveSpeed;
 		speedCounterStore = speedCounter;
 		speedIncreaseLimitStore = speedIncreaseLimit;
+		//stopJump = true;
+
 	}
 
 	// Update is called once per frame
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else if(Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0)){
 			isHoldJump = false;
+			//stopJump = true;
 			currentAirTime = 0;
 		}
 		//onGround = Physics2D.IsTouchingLayers(playerCollider, groundLayer);
@@ -98,6 +101,8 @@ public class PlayerController : MonoBehaviour
 		else{
 
 			playerRigidBody.velocity = new Vector2(moveSpeed, playerRigidBody.velocity.y);
+			//stopJump = false;
+			//doubleJump = true;
 		}
 		// isJump = false;
 
