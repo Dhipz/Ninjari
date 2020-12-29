@@ -1797,6 +1797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 317222266}
   - component: {fileID: 317222267}
+  - component: {fileID: 317222268}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -1812,7 +1813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317222265}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10.366642, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 824942695}
@@ -1854,6 +1855,19 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 824942695}
+--- !u!114 &317222268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317222265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 370889995}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_YPosition: -0.82
 --- !u!1 &340407441
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2028,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365114965}
   m_CullTransparentMesh: 0
+--- !u!115 &370889995
+MonoScript:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 5
+  m_Script: 
+  m_DefaultReferences: {}
+  m_Icon: {fileID: 0}
+  m_ExecutionOrder: 0
+  m_ClassName: LockCameraY
+  m_Namespace: 
 --- !u!1 &383635832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,7 +2763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.79, y: -0.86000013, z: -10}
+  m_LocalPosition: {x: -3.4646864, y: -0.82, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 317222266}
