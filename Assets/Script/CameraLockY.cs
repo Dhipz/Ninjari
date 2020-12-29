@@ -1,4 +1,4 @@
-    using UnityEngine;
+ using UnityEngine;
     using Cinemachine;
      
     /// <summary>
@@ -22,4 +22,3 @@
             }
         }
     }
-     
