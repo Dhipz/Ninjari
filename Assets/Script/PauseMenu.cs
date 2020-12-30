@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseButton;
 
     private AudioSource playSound;
+    
 
     void Start(){
         playSound = GameObject.Find("playsfx").GetComponent<AudioSource>();
