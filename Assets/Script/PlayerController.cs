@@ -97,17 +97,17 @@ public class PlayerController : MonoBehaviour
 				currentAirTime -= Time.deltaTime;
 			}
 		}
-		if(stopFirstJump && !onGround){
-			if(doubleJump && isdoubleJump){
-				doubleJump = false;
-				playerRigidBody.velocity = new Vector2(moveSpeed, jumpPower);
-			}
-		}
 		else{
 
 			playerRigidBody.velocity = new Vector2(moveSpeed, playerRigidBody.velocity.y);
 			//stopJump = false;
 			//doubleJump = true;
+		}
+		if(stopFirstJump && !onGround){
+			if(doubleJump && isdoubleJump){
+				doubleJump = false;
+				playerRigidBody.velocity = new Vector2(moveSpeed, jumpPower);
+			}
 		}
 		player_animation.SetFloat("speed", playerRigidBody.velocity.x);
 		player_animation.SetBool("grounded", onGround);

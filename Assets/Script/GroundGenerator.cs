@@ -80,7 +80,8 @@ public class GroundGenerator : MonoBehaviour
             if(Random.Range(0f, 100f) < randomEnemyLimit){
                 GameObject newEnemy = enemyPool.GetPooledObject();
                 float enemyXPosition = Random.Range(-groundslength[groundselector]/2f + 1f, groundslength[groundselector]/2f - 1f);
-                Vector3 enemyPosition = new Vector3(enemyXPosition, -1.3f, 0f);
+                float enemyYPosition = Random.Range(0, heightgroundmax);
+                Vector3 enemyPosition = new Vector3(enemyXPosition, -1.3f+enemyYPosition, 0f);
                 newEnemy.transform.position = transform.position + enemyPosition;
                 newEnemy.transform.rotation = transform.rotation;
                 newEnemy.SetActive(true);
