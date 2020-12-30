@@ -3740,6 +3740,7 @@ GameObject:
   - component: {fileID: 695942002}
   - component: {fileID: 695942004}
   - component: {fileID: 695942003}
+  - component: {fileID: 695942005}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -3763,8 +3764,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.70000076, y: -1.7}
-  m_SizeDelta: {x: 938.6211, y: 679.79614}
+  m_AnchoredPosition: {x: 0.29999924, y: -7.299999}
+  m_SizeDelta: {x: 2312.7969, y: 1711.5266}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &695942003
 MonoBehaviour:
@@ -3803,6 +3804,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695942001}
   m_CullTransparentMesh: 0
+--- !u!114 &695942005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695942001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 0
+  m_AspectRatio: 1.3319136
 --- !u!1 &734175700
 GameObject:
   m_ObjectHideFlags: 0
@@ -6266,6 +6281,7 @@ GameObject:
   - component: {fileID: 1449750588}
   - component: {fileID: 1449750590}
   - component: {fileID: 1449750589}
+  - component: {fileID: 1449750591}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -6289,8 +6305,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.011413574, y: -0.0015563965}
-  m_SizeDelta: {x: 924.02295, y: 667.9968}
+  m_AnchoredPosition: {x: -2.7, y: -2.2}
+  m_SizeDelta: {x: 2278.8838, y: 1684.1157}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1449750589
 MonoBehaviour:
@@ -6329,6 +6345,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449750587}
   m_CullTransparentMesh: 0
+--- !u!114 &1449750591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449750587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 0
+  m_AspectRatio: 1.3333685
 --- !u!1 &1467865459
 GameObject:
   m_ObjectHideFlags: 0
