@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
 	public AudioSource jumpSound;
 	public AudioSource deathSound;
-	public AudioSource playSound;
+	private AudioSource playSound;
 
 	// Start is called before the first frame update
 	void Start()
@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
 		speedCounterStore = speedCounter;
 		speedIncreaseLimitStore = speedIncreaseLimit;
 		//stopJump = true;
+		playSound = GameObject.Find("playsfx").GetComponent<AudioSource>();
 
 	}
 

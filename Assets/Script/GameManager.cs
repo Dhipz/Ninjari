@@ -14,12 +14,16 @@ public class GameManager : MonoBehaviour
     private ScoreManager SM;
 
     public DeathMenu deathScreen;
+
+    private AudioSource playSound;
+
     // Start is called before the first frame update
     void Start()
     {
         groundStartPoint = groundGenerator.position;
         playerStartPoint = player.transform.position;
         SM = FindObjectOfType<ScoreManager>();
+        playSound = GameObject.Find("playsfx").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,8 +37,10 @@ public class GameManager : MonoBehaviour
         SM.scoreIncrease = false;
         player.gameObject.SetActive(false);
         deathScreen.gameObject.SetActive(true);
+        playSound.Pause();
     }
     public void Reset(){
+        playSound.Play();
         deathScreen.gameObject.SetActive(false);
         groundList = FindObjectsOfType<GroundDestroyer>();
         for(int i=0; i<groundList.Length; i++){
