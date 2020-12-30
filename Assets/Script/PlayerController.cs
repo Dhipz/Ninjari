@@ -22,8 +22,9 @@ public class PlayerController : MonoBehaviour
 	private bool onGround;
 	private float currentAirTime;
 
-	private bool stopJump;
+	private bool stopFirstJump;
 	private bool doubleJump;
+	private bool isdoubleJump;
 
 	public LayerMask groundLayer;
 	public Transform groundCheck;
@@ -50,7 +51,9 @@ public class PlayerController : MonoBehaviour
 		speedIncreaseLimitStore = speedIncreaseLimit;
 		//stopJump = true;
 		playSound = GameObject.Find("playsfx").GetComponent<AudioSource>();
-
+		doubleJump = true;
+		stopFirstJump = false;
+		
 	}
 
 	// Update is called once per frame
@@ -59,13 +62,13 @@ public class PlayerController : MonoBehaviour
 		// if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)){
 		// 	isJump = true;
 		// }
-		if(Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)){
+		if(Input.GetKey(KeyCode.Space)|| Input.GetMouseButton(0)){
 			isHoldJump = true;
 			jumpSound.Play();
 		}
-		else if(Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0)){
+		else if(Input.GetKeyUp(KeyCode.Space)|| Input.GetMouseButtonUp(0)){
 			isHoldJump = false;
-			//stopJump = true;
+			stopFirstJump = true;
 			currentAirTime = 0;
 		}
 		//onGround = Physics2D.IsTouchingLayers(playerCollider, groundLayer);
@@ -76,6 +79,38 @@ public class PlayerController : MonoBehaviour
 			speedIncreaseLimit = speedIncreaseLimit*speedMultiplier;
 			moveSpeed = moveSpeed*speedMultiplier;
 		}
+		if(!onGround && ((Input.GetKeyDown(KeyCode.Space)|| Input.GetMouseButtonDown(0)))){
+			isdoubleJump = true;
+		}
+		else{
+			isdoubleJump = false;
+		}
+		if(onGround){
+			currentAirTime =jumpAirTime;
+			doubleJump = true;
+			stopFirstJump = false;
+		}
+		if(isHoldJump){
+			stopFirstJump = true;
+			if(currentAirTime > 0){
+				playerRigidBody.velocity = new Vector2(moveSpeed, jumpPower);
+				currentAirTime -= Time.deltaTime;
+			}
+		}
+		if(stopFirstJump && !onGround){
+			if(doubleJump && isdoubleJump){
+				doubleJump = false;
+				playerRigidBody.velocity = new Vector2(moveSpeed, jumpPower);
+			}
+		}
+		else{
+
+			playerRigidBody.velocity = new Vector2(moveSpeed, playerRigidBody.velocity.y);
+			//stopJump = false;
+			//doubleJump = true;
+		}
+		player_animation.SetFloat("speed", playerRigidBody.velocity.x);
+		player_animation.SetBool("grounded", onGround);
 	}
 
 	// Update on fixed tick for physic
@@ -90,25 +125,9 @@ public class PlayerController : MonoBehaviour
 		// 		playerRigidBody.velocity = new Vector2(moveSpeed, playerRigidBody.velocity.y);
 		// }
 		
-		if(onGround){
-			currentAirTime =jumpAirTime; 
-		}
-		if(isHoldJump){
-			if(currentAirTime > 0){
-				playerRigidBody.velocity = new Vector2(moveSpeed, jumpPower);
-				currentAirTime -= Time.deltaTime;
-			}
-		}
-		else{
-
-			playerRigidBody.velocity = new Vector2(moveSpeed, playerRigidBody.velocity.y);
-			//stopJump = false;
-			//doubleJump = true;
-		}
+		
 		// isJump = false;
 
-		player_animation.SetFloat("speed", playerRigidBody.velocity.x);
-		player_animation.SetBool("grounded", onGround);
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
