@@ -38,4 +38,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int pointAdd){
         scoreCounter += pointAdd;
     }
+    public void ResetHiScore(){
+        PlayerPrefs.SetFloat("HighScore", 0f);
+    }
 }
